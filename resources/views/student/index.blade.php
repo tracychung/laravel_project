@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Student Table</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,11 +10,11 @@
 <body>
 
 <div class="container mt-3">
-  <h2>Student Table</h2>
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
-  <a href="#" class="btn btn-success mb-3 my-3">單筆新增</a>      
-  {{dd($data)}}      
-  <table class="table">
+  <h2>Students Table</h2>
+  <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>       
+  <a href="{{route('students.create')}}" class="btn btn-success mb-3 mt-3 ">單筆新增</a>
+  {{-- {{dd($data)}} --}}
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>id</th>
@@ -35,6 +35,7 @@
             </td>
         </tr>
         @endforeach
+        
     </tbody>
   </table>
 </div>

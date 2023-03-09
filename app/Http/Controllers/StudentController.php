@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use App\Models\User;
-
 
 class StudentController extends Controller
 {
@@ -14,10 +12,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //dd('student controller ok')
-       $data= Student::get();
-    //    dd($data);
-       return view('student.index',['data'=>$data]);
+        // dd('student controller ok');
+
+        $data = Student::get();
+        return view('student.index', ['data' => $data]);
     }
 
     /**
@@ -25,7 +23,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        // dd('hello create');
+        return view ('student.create');
     }
 
     /**
@@ -33,7 +32,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd('hello store');
+        $data = new Student;
+ 
+        $data->name = $request->name;
+        $data->age = $request->age;
+ 
+        $data->save();
+
+        return redirect()->route('students.index');
     }
 
     /**
@@ -67,22 +74,4 @@ class StudentController extends Controller
     {
         //
     }
-
-     /**
-     * 自定義 excel output
-     */
-    public function excel()
-    {
-        // dd('hello student excel');
-        return view('student.excel');       
-
-    }
-
-    public function childPage(){
-        return view('child');
-    }
-    public function page1(){
-        return view('p1');
-    }
-   
 }

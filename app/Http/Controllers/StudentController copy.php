@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
-use App\Models\User;
 
 
 class StudentController extends Controller
@@ -14,10 +12,24 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //dd('student controller ok')
-       $data= Student::get();
-    //    dd($data);
-       return view('student.index',['data'=>$data]);
+        // return view('student.index',['name'=>'Tracy','age'=>'18']);
+        // $data=[
+        //     'name'=>'Tracy',
+        //     'age'=>'18',
+        //     'love'=>['laravel','php','js','jquery']
+        // ];
+
+        $data=[
+            ['name'=>'amy',
+            'mobile'=>'0911-111-111'],
+            ['name'=>'bob',
+            'mobile'=>'0922-222-222'],
+            ['name'=>'cat',
+            'mobile'=>'0933-333-333'],
+        ];
+        return view('student.index',['data'=>$data]);
+
+        
     }
 
     /**

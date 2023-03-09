@@ -19,12 +19,12 @@ use App\Http\Controllers\HotelController;
 //     return view('welcome');
 // });
 
+
+
+
 Route::get('/', function () {
-    return view('student');
+    return view('student.index');
 });
-// Route::get('/', function () {
-//     return view('student.index');
-// });
 
  
 // Route::get('/sayHello', [StudentController::class, 'sayHello']);
@@ -44,4 +44,6 @@ Route::get('f1', [HotelController::class, 'f1'])->name('hotels.1');
 Route::get('f2', [HotelController::class, 'f2'])->name('hotels.2');
 Route::get('f3', [HotelController::class, 'f3'])->name('hotels.3');
 Route::resource('hotels', HotelController::class);
+
+
 

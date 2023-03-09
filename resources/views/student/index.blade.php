@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>student</title>
+  <title>Student Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <h2>hello student index blade</h2>
-    <br>
-    {{-- <a href="{{url('student.excel')}}">excel</a> --}}
-    {{-- <h1>Hello,{{$name}}</h1>
-    <h3>{{$name}} - {{$age}}</h3> --}}
 
-    {{-- laravel dd --}}
-    
-    {{-- <h1>Hello,{{$data['name']}}</h1>
-    <h3>{{$data['name']}} - {{$data['age']}}</h3> --}}
-    @php
-    // dd($data);
-    @endphp
-    {{--  =>{{dd($data)}}  --}}
-    @foreach ($data as $item)
-    <p>{{$item['name']}} - {{$item['mobile']}}</p>
-        
-    @endforeach
+<div class="container mt-3">
+  <h2>Student Table</h2>
+  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+  <a href="#" class="btn btn-success mb-3 my-3">單筆新增</a>      
+  {{dd($data)}}      
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>edit/del</th>
+      </tr>
+    </thead>
+    <tbody>
+        @foreach ($data as $item)
+        <tr>
+            <td>{{$item->id}}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->age}}</td>
+            <td>
+                <a href="http://">修改</a>
+                <a href="http://">刪除</a>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+  </table>
+</div>
 
-
-    <br>
-    <a href="{{route('students.excel')}}">excel</a>
-    {{-- <a href="/student_excel">excel</a> --}}
-    <br>
-    <?php 
-        dd($data);
-    ?>
 </body>
 </html>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Exports\StudentsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -113,4 +115,10 @@ class StudentController extends Controller
        return redirect()->route('students.index');
 
     }
+    
+    public function excel() 
+    {
+        return Excel::download(new StudentsExport, 'students.xlsx');
+    }
+
 }

@@ -27,6 +27,8 @@ Route::get('/', function () {
     $data=Student::get();
     return view('student.index', ['data' => $data]);
 });
+
+
  
 // Route::get('/sayHello', [StudentController::class, 'sayHello']);
 
@@ -46,5 +48,6 @@ Route::get('f2', [HotelController::class, 'f2'])->name('hotels.2');
 Route::get('f3', [HotelController::class, 'f3'])->name('hotels.3');
 Route::resource('hotels', HotelController::class);
 
+Route::get('students_excel', [StudentsController::class, 'excel'])->name('student_excel');
 
 

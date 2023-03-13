@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class StudentSeeder extends Seeder
 {
@@ -21,7 +22,8 @@ class StudentSeeder extends Seeder
                 'name' => "user-$i",
                 'age' => rand(10,65),
                 // 'password' => Hash::make('password'),
-                
+                'created_at'=>Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at'=>Carbon::now()->format('Y-m-d H:i:s')
             ]);
         }
     }

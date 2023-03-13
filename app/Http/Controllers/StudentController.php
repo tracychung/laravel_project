@@ -93,10 +93,10 @@ class StudentController extends Controller
         // 2.修改後data update 單筆data
         $data = Student::find($id);
 
-        $data->name=$input['name'];
-        $data->name=$input['age'];
-        // $data->name = $request->name;
-        // $data->age = $request->age;
+        // $data->name=$input['name'];
+        // $data->name=$input['age'];
+        $data->name = $request->name;
+        $data->age = $request->age;
          $data->save();
         return redirect()->route('students.index');
         

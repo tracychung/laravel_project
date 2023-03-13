@@ -15,6 +15,7 @@
   <table class="table table-bordered">
     <thead>
       <tr>
+        <th>id</th>
         <th>name</th>
         <th>age</th>        
       </tr>

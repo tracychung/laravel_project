@@ -25,12 +25,17 @@
     </thead>
     <tbody>
         @foreach ($data as $item)
+        
         <tr>
+
+
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
             <td>{{$item->age}}</td>
             <td>
-                <a href="http://">修改</a>
+              {{-- <a href="stedents/1/edit">修改</a> --}}
+              {{-- dd(route('students.edit',['student=>1'])) --}}
+                <a href="{{route('students.edit',['student'=>$item->id])}}">修改</a>
                 <a href="http://">刪除</a>
             </td>
         </tr>

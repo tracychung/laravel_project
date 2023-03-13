@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\HotelController;
+use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,9 @@ use App\Http\Controllers\HotelController;
 
 
 Route::get('/', function () {
-    return view('student.index');
+    $data=Student::get();
+    return view('student.index', ['data' => $data]);
 });
-
  
 // Route::get('/sayHello', [StudentController::class, 'sayHello']);
 
